@@ -32,20 +32,20 @@
     var b = 0;
     var max = 255;
     var direction = true;
-   
+
 
     function changeColor(direction) {
 
         setInterval(() => {
 
-           //sample color  
-          //  bg.style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+            //sample color  
+            //  bg.style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
 
-          //two colors linear gradiens 
-          //  bg.style.backgroundImage = "linear-gradient(to right, "+'rgb(' + r + ',' + g + ',' + b + ')' +", "+ 'rgb(' + g + ',' + b + ',' + r + ')'+")";
+            //two colors linear gradiens 
+            //  bg.style.backgroundImage = "linear-gradient(to right, "+'rgb(' + r + ',' + g + ',' + b + ')' +", "+ 'rgb(' + g + ',' + b + ',' + r + ')'+")";
 
             //three colors linear gradients 
-            bg.style.backgroundImage = "linear-gradient(to right, "+'rgb(' + r + ',' + g + ',' + b + ')' +", "+ 'rgb(' + g + ',' + b + ',' + r + ')' +", "+ 'rgb(' + r + ',' + b+ ',' + g + ')'+")";
+            bg.style.backgroundImage = "linear-gradient(to right, " + 'rgb(' + r + ',' + g + ',' + b + ')' + ", " + 'rgb(' + g + ',' + b + ',' + r + ')' + ", " + 'rgb(' + r + ',' + b + ',' + g + ')' + ")";
 
 
             if (direction) {
@@ -62,9 +62,9 @@
             else {
 
                 if (r > max) {
-                    r = r - 1;
+                    r = r - 3;
                     g = g + 2;
-                    b = b - 3;
+                    b = b - 1;
                 }
             }
 
