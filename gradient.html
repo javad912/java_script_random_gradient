@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gradient</title>
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        .bg {
+            width: 100vw;
+            height: 100vh;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bg" id="custum-bg"></div>
+</body>
+<script>
+
+    var bg = document.getElementById("custum-bg");
+    var duration = 100;
+    var r = 0;
+    var g = 255;
+    var b = 0;
+    var max = 255;
+    var direction = true;
+   
+
+    function changeColor(direction) {
+
+        setInterval(() => {
+
+           //sample color  
+          //  bg.style.backgroundColor = 'rgb(' + r + ',' + g + ',' + b + ')';
+
+          //two colors linear gradiens 
+          //  bg.style.backgroundImage = "linear-gradient(to right, "+'rgb(' + r + ',' + g + ',' + b + ')' +", "+ 'rgb(' + g + ',' + b + ',' + r + ')'+")";
+
+            //three colors linear gradients 
+            bg.style.backgroundImage = "linear-gradient(to right, "+'rgb(' + r + ',' + g + ',' + b + ')' +", "+ 'rgb(' + g + ',' + b + ',' + r + ')' +", "+ 'rgb(' + r + ',' + b+ ',' + g + ')'+")";
+
+
+            if (direction) {
+
+                if (r < max) {
+
+                    r = r + 1;
+                    g = g - 2;
+                    b = b + 3;
+
+                }
+            }
+
+            else {
+
+                if (r > max) {
+                    r = r - 1;
+                    g = g + 2;
+                    b = b - 3;
+                }
+            }
+
+        }, duration);
+    };
+
+    function checkColor() {
+        if (r < max) {
+            console.log('less');
+            changeColor(true);
+        } else {
+            max = Math.floor(Math.random() * 255);
+            changeColor(false);
+            console.log('more');
+        }
+    }
+
+    setInterval(() => {
+        checkColor(r);
+    }, 1000);
+
+
+
+</script>
+
+</html>
